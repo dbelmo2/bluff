@@ -3,8 +3,17 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+import { BrowserRouter, Routes, Route } from "react-router";
+import GameModeMenu from './pages/GameModeMenu.tsx';
+
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/modes" element={<GameModeMenu />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 )
